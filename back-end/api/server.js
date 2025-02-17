@@ -1,21 +1,20 @@
 import express from "express";
-import { artistArray } from "../../front-end/src/assets/database/artists.js"
-import { songsArray } from "../../front-end/src/assets/database/songs.js"
+import { db } from "./connect.js"
 
 const app = express();
 const PORT = 3000;
 
 app.get('/', (req, res) => {
     res.send("/artists ou /songs!")
-})
+});
 
-app.get('/artists', (req, res) => {
-    res.send(artistArray)
-})
+app.get('/artists', async (req, res) => {
+    res.send(await db.collection('artists').find({}).toArray())
+});
 
-app.get('/songs', (req, res) => {
-    res.send(songsArray)
-})
+app.get('/songs', async (req, res) => {
+    res.send(await db.collection('songs').find({}).toArray())
+});
 
 app.listen(PORT, () => {
     console.log(`Servidor escutando na porta ${PORT}`)
