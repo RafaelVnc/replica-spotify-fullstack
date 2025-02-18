@@ -1,8 +1,6 @@
-import dotenv from "dotenv";
 import axios from "axios";
 
-dotenv.config();
-const NODE_ENV = process.env.NODE_ENV;
+const NODE_ENV = import.meta.env.VITE_NODE_ENV;
 
 const URL = NODE_ENV === 'development' ? "http://localhost:3000/api" : "/api";
 
