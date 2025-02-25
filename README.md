@@ -49,7 +49,8 @@ git clone https://github.com/RafaelVnc/replica-spotify-fullstack.git
 
 # check if bash is already in the project folder
 
-# In the back-end folder: create a .env file and declare MONGO_URI with the value of your mongo cluster conection string 
+# In the back-end folder: create a .env file and declare MONGO_URI with the value  
+# of your mongo cluster conection string 
 
 # run build
 npm run build
